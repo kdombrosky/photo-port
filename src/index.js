@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Main entry point for application
+// The ReactDOM library is rendering the App component at the root element in the HTML
+// React will inject the whole app into whichever element has the root id
 ReactDOM.render(
   <React.StrictMode>
     <App />
