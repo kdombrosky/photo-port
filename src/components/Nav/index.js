@@ -30,21 +30,25 @@ function Nav(props) {
             <nav>
             <ul className="flex-row">
                 <li className="mx-2">
+                {/* When About is selected, contactSelected is set to false, and About component is rendered */}
                 <a data-testid="about" href="#about" onClick={() => setContactSelected(false)}>
                     About me
                 </a>
                 </li>
+                {/* If contactSelected is true, set class to navActive */}
                 <li className={`mx-2 ${contactSelected && 'navActive'}`}>
+                {/* Set contactSelected to true when Contact is selected */}
                 <span onClick={() => setContactSelected(true)}>Contact</span>
                 </li>
                 {categories.map((category) => (
+                // Set class to 'navActive' if the current category HAS been selected AND Contact HASNT been selected
                 <li
                 className={`mx-1 ${
-                    currentCategory.name === category.name && !contactSelected && `navActive`
-                    }`}
+                currentCategory.name === category.name && !contactSelected && `navActive`
+                }`}
                 key={category.name}
                 >
-                    {/* render Gallery  */}
+                    {/* render Gallery  and setContactSelected to false*/}
                     <span onClick={() => {
                         setCurrentCategory(category);
                         setContactSelected(false);

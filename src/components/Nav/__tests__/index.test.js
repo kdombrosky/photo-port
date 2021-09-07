@@ -10,6 +10,8 @@ const categories = [
 ]
 const mockCurrentCategory = jest.fn();
 const mockSetCurrentCategory = jest.fn();
+const mockContactSelected = jest.fn();
+const mockSetContactSelected = jest.fn();
 
 // cleanup leftover memory data - Jest function
 afterEach(cleanup);
@@ -21,6 +23,8 @@ describe('Nav component', () => {
             categories={categories}
             setCurrentCategory={mockSetCurrentCategory}
             currentCategory={mockCurrentCategory}
+            contactSelected={mockContactSelected}
+            setContactSelected={mockSetContactSelected}
         />);
     })
 
@@ -32,6 +36,8 @@ describe('Nav component', () => {
                 categories={categories}
                 setCurrentCategory={mockSetCurrentCategory}
                 currentCategory={mockCurrentCategory}
+                contactSelected={mockContactSelected}
+                setContactSelected={mockSetContactSelected}
             />
         );
 
@@ -48,6 +54,8 @@ describe('emoji is visible', () => {
                 categories={categories}
                 setCurrentCategory={mockSetCurrentCategory}
                 currentCategory={mockCurrentCategory}
+                contactSelected={mockContactSelected}
+                setContactSelected={mockSetContactSelected}
             />
         );
 
@@ -63,6 +71,8 @@ describe('links are visible', () => {
                 categories={categories}
                 setCurrentCategory={mockSetCurrentCategory}
                 currentCategory={mockCurrentCategory}
+                contactSelected={mockContactSelected}
+                setContactSelected={mockSetContactSelected}
             />
         );
         // two expects means both must render true to pass the entire test

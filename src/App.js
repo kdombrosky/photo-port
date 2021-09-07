@@ -9,6 +9,8 @@ import Gallery from './components/Gallery/';
 import ContactForm from './components/Contact';
 
 function App() {
+  // initial value of false to prevent contact form from showing when user gets to homepage
+  // use contactSelected for a conditional to render the page
   const [contactSelected, setContactSelected] = useState(false);
 
   const [categories] = useState([
@@ -34,7 +36,8 @@ function App() {
       ></Nav>
       <main>
         <div>
-          {/* Conditionally render components to view picture, or contact */}
+          {/* Conditionally render components to view gallery of pics, or contact form */}
+          {/* this is a ternary operator ? : */}
           {!contactSelected ? (
             <>
               <Gallery currentCategory={currentCategory}></Gallery>
