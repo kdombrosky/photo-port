@@ -3,7 +3,9 @@ import Modal from '../Modal';
 
 
 const PhotoList = ({ category }) => {
-    
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentPhoto, setCurrentPhoto] = useState();
+
     const [photos] = useState([
         {
             name: 'Grocery aisle',
@@ -101,9 +103,6 @@ const PhotoList = ({ category }) => {
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie',
         },
     ]);
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentPhoto, setCurrentPhoto] = useState();
 
     const currentPhotos = photos.filter((photo) => photo.category === category);
 
